@@ -9465,3 +9465,380 @@ WARNING: Unmatched cancel notification for request id 50
 2023.02.22 21:03:51 INFO  time: compiled personas in 4.99s
 feb. 22, 2023 9:04:32 P. M. org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
+2023.02.22 21:08:52 WARN  Cannot tokenize Java file file:///D:/studio/cursos/curso-elementos-desarrollo-web/sesiones/clase-11/springboot-personas/src/main/java/com/example/personas/PersonaController.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Char_In_String
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1564)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:226)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:188)
+	at scala.meta.internal.metals.Diagnostics.didChange(Diagnostics.scala:136)
+	at scala.meta.internal.metals.MetalsLanguageServer.didChange(MetalsLanguageServer.scala:1275)
+	at jdk.internal.reflect.GeneratedMethodAccessor7.invoke(null)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+feb. 22, 2023 9:08:52 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: org.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Char_In_String
+java.util.concurrent.CompletionException: org.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Char_In_String
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:484)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Char_In_String
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1564)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.next$1(JavaFoldingRangeExtractor.scala:100)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.gather$1(JavaFoldingRangeExtractor.scala:147)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.extract(JavaFoldingRangeExtractor.scala:155)
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:54)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:49)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$foldingRange$3(MetalsLanguageServer.scala:1809)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	... 3 more
+
+2023.02.22 21:08:52 WARN  Cannot tokenize Java file file:///D:/studio/cursos/curso-elementos-desarrollo-web/sesiones/clase-11/springboot-personas/src/main/java/com/example/personas/PersonaController.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Char_In_String
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1564)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.codelenses.RunTestCodeLens.codeLenses(RunTestCodeLens.scala:60)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$3(CodeLensProvider.scala:26)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$2(CodeLensProvider.scala:26)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:24)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.02.22 21:08:52 WARN  Cannot tokenize Java file file:///D:/studio/cursos/curso-elementos-desarrollo-web/sesiones/clase-11/springboot-personas/src/main/java/com/example/personas/PersonaController.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Char_In_String
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1564)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.codelenses.SuperMethodCodeLens.codeLenses(SuperMethodCodeLens.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$3(CodeLensProvider.scala:26)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$2(CodeLensProvider.scala:26)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:24)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.02.22 21:08:52 WARN  Cannot tokenize Java file file:///D:/studio/cursos/curso-elementos-desarrollo-web/sesiones/clase-11/springboot-personas/src/main/java/com/example/personas/PersonaController.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Char_In_String
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1564)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.DefinitionProvider.positionOccurrenceQuery(DefinitionProvider.scala:169)
+	at scala.meta.internal.metals.DefinitionProvider.positionOccurrence(DefinitionProvider.scala:198)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$definitionOrReferences$1(MetalsLanguageServer.scala:2673)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.MetalsLanguageServer.definitionOrReferences(MetalsLanguageServer.scala:2669)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$definition$1(MetalsLanguageServer.scala:1533)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLanguageServer.definition(MetalsLanguageServer.scala:1532)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.02.22 21:08:52 WARN  Cannot tokenize Java file file:///D:/studio/cursos/curso-elementos-desarrollo-web/sesiones/clase-11/springboot-personas/src/main/java/com/example/personas/PersonaController.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Char_In_String
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1564)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.DefinitionProvider.positionOccurrenceQuery(DefinitionProvider.scala:169)
+	at scala.meta.internal.metals.DefinitionProvider.positionOccurrence(DefinitionProvider.scala:198)
+	at scala.meta.internal.metals.DefinitionProvider.definitionFromSnapshot(DefinitionProvider.scala:250)
+	at scala.meta.internal.metals.DefinitionProvider.definition(DefinitionProvider.scala:86)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$definitionResult$1(MetalsLanguageServer.scala:2730)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.definitionResult(MetalsLanguageServer.scala:2730)
+	at scala.meta.internal.metals.MetalsLanguageServer.definitionOrReferences(MetalsLanguageServer.scala:2706)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$definition$1(MetalsLanguageServer.scala:1533)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLanguageServer.definition(MetalsLanguageServer.scala:1532)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.02.22 21:09:50 INFO  compiling personas (1 java source)
+2023.02.22 21:09:52 INFO  time: compiled personas in 2.24s
+feb. 22, 2023 9:09:57 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 434
+feb. 22, 2023 9:10:53 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 522
+feb. 22, 2023 9:11:13 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 583
+feb. 22, 2023 9:11:23 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 598
+feb. 22, 2023 9:12:05 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 663
+feb. 22, 2023 9:12:16 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 685
+2023.02.22 21:12:24 INFO  compiling personas (1 java source)
+2023.02.22 21:12:28 INFO  time: compiled personas in 4.33s
+2023.02.22 21:12:59 INFO  compiling personas (1 java source)
+2023.02.22 21:13:02 INFO  time: compiled personas in 3.39s
+feb. 22, 2023 9:13:33 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 840
+feb. 22, 2023 9:13:55 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 893
+2023.02.22 21:15:08 INFO  compiling personas (1 java source)
+2023.02.22 21:15:13 INFO  time: compiled personas in 4.52s
+feb. 22, 2023 9:16:04 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1010
+2023.02.22 21:16:37 INFO  compiling personas (1 java source)
+2023.02.22 21:16:40 INFO  time: compiled personas in 3.47s
+2023.02.22 21:17:01 INFO  compiling personas (1 java source)
+feb. 22, 2023 9:17:03 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1086
+feb. 22, 2023 9:17:04 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1089
+2023.02.22 21:17:05 INFO  time: compiled personas in 4.88s
+2023.02.22 21:17:05 INFO  compiling personas (1 java source)
+2023.02.22 21:17:08 INFO  time: compiled personas in 2.51s
+feb. 22, 2023 9:17:51 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1178
+2023.02.22 21:17:57 INFO  compiling personas (1 java source)
+2023.02.22 21:18:01 INFO  time: compiled personas in 3.93s
+2023.02.22 21:18:10 INFO  compiling personas (1 java source)
+2023.02.22 21:18:13 INFO  time: compiled personas in 2.97s
+feb. 22, 2023 9:18:39 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1215
+feb. 22, 2023 9:19:40 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1249
+feb. 22, 2023 9:20:32 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1309
+2023.02.22 21:20:39 INFO  compiling personas (1 java source)
+2023.02.22 21:20:43 INFO  time: compiled personas in 3.33s
+2023.02.22 21:40:38 INFO  compiling personas (1 java source)
+2023.02.22 21:40:41 INFO  time: compiled personas in 3.19s
+2023.02.22 21:41:02 INFO  compiling personas (1 java source)
+2023.02.22 21:41:05 INFO  time: compiled personas in 3.05s
+feb. 22, 2023 9:46:34 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1438
+2023.02.22 21:46:47 INFO  compiling personas (1 java source)
+2023.02.22 21:46:49 WARN  javac exited with exit code 1
+2023.02.22 21:46:49 INFO  time: compiled personas in 1.76s
+2023.02.22 21:47:16 INFO  compiling personas (2 java sources)
+2023.02.22 21:47:18 WARN  javac exited with exit code 1
+2023.02.22 21:47:18 INFO  time: compiled personas in 1.75s
+2023.02.22 21:47:18 INFO  compiling personas (2 java sources)
+2023.02.22 21:47:19 WARN  javac exited with exit code 1
+2023.02.22 21:47:19 INFO  time: compiled personas in 1.74s
+feb. 22, 2023 9:47:32 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1480
+feb. 22, 2023 9:47:38 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1498
+feb. 22, 2023 9:48:02 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1562
+2023.02.22 21:48:50 INFO  compiling personas (2 java sources)
+2023.02.22 21:48:52 INFO  time: compiled personas in 1.92s
+2023.02.22 21:50:08 INFO  compiling personas (1 java source)
+2023.02.22 21:50:09 INFO  time: compiled personas in 1.19s
+feb. 22, 2023 9:50:41 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1655
+feb. 22, 2023 9:50:44 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1664
+feb. 22, 2023 9:53:00 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1750
+feb. 22, 2023 9:53:00 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1751
+feb. 22, 2023 9:53:00 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1752
+feb. 22, 2023 9:53:20 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1773
+2023.02.22 21:53:42 INFO  compiling personas (1 java source)
+2023.02.22 21:53:43 WARN  javac exited with exit code 1
+2023.02.22 21:53:43 INFO  time: compiled personas in 1.42s
+2023.02.22 21:53:46 INFO  compiling personas (2 java sources)
+2023.02.22 21:53:47 INFO  time: compiled personas in 1.55s
+2023.02.22 21:53:47 INFO  compiling personas (1 java source)
+2023.02.22 21:53:49 INFO  time: compiled personas in 2.1s
+feb. 22, 2023 9:56:37 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1843
+2023.02.22 21:56:41 INFO  compiling personas (1 java source)
+2023.02.22 21:56:43 INFO  time: compiled personas in 1.57s
+2023.02.22 21:56:45 INFO  compiling personas (1 java source)
+2023.02.22 21:56:46 INFO  time: compiled personas in 1.65s
+feb. 22, 2023 10:07:36 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1899
+feb. 22, 2023 10:07:43 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1919
+2023.02.22 22:09:09 INFO  compiling personas (1 java source)
+2023.02.22 22:09:11 INFO  time: compiled personas in 2.13s
+2023.02.22 22:10:39 INFO  compiling personas (1 java source)
+feb. 22, 2023 10:10:40 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2066
+2023.02.22 22:10:40 WARN  javac exited with exit code 1
+2023.02.22 22:10:40 INFO  time: compiled personas in 1.53s
+2023.02.22 22:11:09 INFO  compiling personas (2 java sources)
+2023.02.22 22:11:10 WARN  javac exited with exit code 1
+2023.02.22 22:11:10 INFO  time: compiled personas in 1.38s
+feb. 22, 2023 10:13:36 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2209
+2023.02.22 22:15:15 INFO  compiling personas (3 java sources)
+2023.02.22 22:15:16 WARN  javac exited with exit code 1
+2023.02.22 22:15:16 INFO  time: compiled personas in 1.61s
+feb. 22, 2023 10:15:44 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2353
+2023.02.22 22:15:45 INFO  compiling personas (6 java sources)
+2023.02.22 22:15:47 WARN  javac exited with exit code 1
+2023.02.22 22:15:47 INFO  time: compiled personas in 1.75s
+feb. 22, 2023 10:16:07 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2362
+2023.02.22 22:16:48 INFO  compiling personas (6 java sources)
+2023.02.22 22:16:50 WARN  javac exited with exit code 1
+2023.02.22 22:16:50 INFO  time: compiled personas in 1.84s
+2023.02.22 22:16:50 INFO  compiling personas (6 java sources)
+2023.02.22 22:16:52 WARN  javac exited with exit code 1
+2023.02.22 22:16:52 INFO  time: compiled personas in 1.7s
+2023.02.22 22:17:10 INFO  compiling personas (6 java sources)
+2023.02.22 22:17:12 INFO  time: compiled personas in 1.61s
+2023.02.22 22:18:38 INFO  compiling personas (1 java source)
+2023.02.22 22:18:39 INFO  time: compiled personas in 1.46s
+2023.02.22 22:19:26 INFO  compiling personas (1 java source)
+2023.02.22 22:19:28 INFO  time: compiled personas in 1.64s
+2023.02.22 22:19:39 INFO  compiling personas (1 java source)
+2023.02.22 22:19:40 INFO  time: compiled personas in 1.41s
+2023.02.22 22:20:54 INFO  compiling personas (1 java source)
+2023.02.22 22:20:56 INFO  time: compiled personas in 1.51s
+2023.02.23 05:01:39 INFO  Bloop uses C:\java\jdk-17.0.5+8 defined at C:\Users\KobashikawaA\.bloop\bloop.json
+2023.02.23 05:01:40 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at D:\studio\cursos\curso-elementos-desarrollo-web\sesiones\clase-11\springboot-personas\.metals\bsp.trace.json or C:\Users\KobashikawaA\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.02.23 05:01:40 INFO  Connected to Build server: Bloop v1.5.6
+2023.02.23 05:01:41 ERROR Empty build targets. Expected at least one build target identifier.
+2023.02.23 05:01:41 ERROR Empty build targets. Expected at least one build target identifier.
+2023.02.23 05:01:41 ERROR Empty build targets. Expected at least one build target identifier.
+2023.02.23 05:01:41 ERROR Empty build targets. Expected at least one build target identifier.
+2023.02.23 05:01:41 ERROR Empty build targets. Expected at least one build target identifier.
+2023.02.23 05:01:41 INFO  {
+  "jsonrpc": "2.0",
+  "id": "7",
+  "error": {
+    "code": -32600,
+    "message": "Empty build targets. Expected at least one build target identifier."
+  }
+}
+2023.02.23 05:01:41 INFO  time: Imported build in 0.67s
+2023.02.23 05:01:43 INFO  time: indexed workspace in 1.56s
+2023.02.23 05:01:43 WARN  no build target for: D:\studio\cursos\curso-elementos-desarrollo-web\sesiones\clase-11\springboot-personas\src\main\java\com\example\personas\PersonaServiceImpl.java
+2023.02.23 05:01:43 WARN  no build target for: D:\studio\cursos\curso-elementos-desarrollo-web\sesiones\clase-11\springboot-personas\src\main\java\com\example\personas\PersonaController.java
+2023.02.23 05:01:43 WARN  no build target for: D:\studio\cursos\curso-elementos-desarrollo-web\sesiones\clase-11\springboot-personas\src\main\java\com\example\personas\Persona.java
+2023.02.23 05:01:43 WARN  no build target for: D:\studio\cursos\curso-elementos-desarrollo-web\sesiones\clase-11\springboot-personas\src\main\java\com\example\personas\HolaService.java
+2023.02.23 05:01:43 WARN  no build target for: D:\studio\cursos\curso-elementos-desarrollo-web\sesiones\clase-11\springboot-personas\src\main\java\com\example\personas\PersonaService.java
+2023.02.23 05:01:45 ERROR text document: file:///D:/studio/cursos/curso-elementos-desarrollo-web/sesiones/clase-11/springboot-personas/src/main/java/com/example/personas/PersonaController.javajava.nio.file.InvalidPathException: Illegal char <:> at index 4: file:///D:/studio/cursos/curso-elementos-desarrollo-web/sesiones/clase-11/springboot-personas/src/main/java/com/example/personas/PersonaController.java
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.nio.file.Path.resolve(Path.java:515)
+	at scala.meta.io.AbsolutePath.resolve(AbsolutePath.scala:43)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$2(ImplementationProvider.scala:85)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:1895)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1(ImplementationProvider.scala:79)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1$adapted(ImplementationProvider.scala:78)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.implementation.ImplementationProvider.computeInheritance(ImplementationProvider.scala:78)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$onChange$1(ImplementationProvider.scala:68)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1916)
+	at scala.meta.internal.implementation.ImplementationProvider.onChange(ImplementationProvider.scala:68)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:81)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:77)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$1(InteractiveSemanticdbs.scala:96)
+	at java.util.HashMap.compute(HashMap.java:1316)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2770)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:89)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:63)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:22)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.02.23 05:01:45 INFO  time: code lens generation in 1.66s
