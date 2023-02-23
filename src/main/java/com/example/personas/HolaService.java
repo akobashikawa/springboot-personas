@@ -1,5 +1,8 @@
 package com.example.personas;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class HolaService {
 
     private String saludo = "";

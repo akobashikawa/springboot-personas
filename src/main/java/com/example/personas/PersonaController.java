@@ -1,6 +1,7 @@
 package com.example.personas;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PersonaController {
 
+    @Autowired
     private HolaService holaService;
 
-    public PersonaController() {
-        this.holaService = new HolaService();
-    }
+    @Autowired
+    private PersonaService personaService;
 
     @GetMapping("/holamundo")
     public HashMap<String, String> holamundo() {
@@ -34,6 +35,16 @@ public class PersonaController {
         String saludo = holaService.getSaludo(nombre);
         map.put("saludo", saludo);
         return map;
+    }
+
+    @GetMapping("/personas")
+    public List<Persona> getPersonas() {
+        return personaService.findAll();
+    }
+
+    @PostMapping("/personas")
+    public Persona createPersona(@RequestBody Persona persona) {
+        return personaService.save(persona);
     }
 
 }
