@@ -33,18 +33,19 @@ SpringApplication.run(PersonasApplication.class, args);
 
 - _resources/static_ para contener el frontend
 
-## Ramas
-
-- Cada rama contiene un caso desarrollado.
-
-### [Hola Mundo](https://github.com/akobashikawa/springboot-personas/tree/holamundo)
-
-- Saludar a todos
-
-### [Hola](https://github.com/akobashikawa/springboot-personas/tree/hola)
-
-- Saludar a alguien
-
-### [Personas](https://github.com/akobashikawa/springboot-personas/tree/personas)
+## Personas
 
 - Lista de personas
+- El formulario permite que el usuario ingrese nombres
+- Los nombres se guardan en una lista
+    - La base de datos es una lista en memoria
+    - Se invoca POST /personas para guardar el registro
+- La lista se jala regularmente
+    - Se invoca GET /personas para traer los datos
+- La lista tiene botones
+    - para editar
+        - Se invoca GET /personas/{id} para traer los datos
+        - Se invoca PUT /personas/{id} para guardar los cambios
+    - para eliminar
+        - Se invoca DELETE /personas/{id} para eliminar el registro
+
