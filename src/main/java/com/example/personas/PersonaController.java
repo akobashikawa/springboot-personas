@@ -10,23 +10,29 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import antlr.collections.List;
-
 @RestController
 public class PersonaController {
+
+    private HolaService holaService;
+
+    public PersonaController() {
+        this.holaService = new HolaService();
+    }
 
     @GetMapping("/holamundo")
     public HashMap<String, String> holamundo() {
         HashMap<String, String> map = new HashMap<>();
-        map.put("saludo", "Hola Mundo!");
+        String saludo = holaService.getSaludo("");
+        map.put("saludo", saludo);
         return map;
     }
 
     @PostMapping("/hola")
     public HashMap<String, String> hola(@RequestBody Persona persona) {
         HashMap<String, String> map = new HashMap<>();
-        String nombre = persona.getNombre() == "" ? "Mundo" : persona.getNombre();
-        map.put("saludo", "Hola " + nombre + "!");
+        String nombre = persona.getNombre();
+        String saludo = holaService.getSaludo(nombre);
+        map.put("saludo", saludo);
         return map;
     }
 
