@@ -33,18 +33,9 @@ SpringApplication.run(PersonasApplication.class, args);
 
 - _resources/static_ para contener el frontend
 
-## Ramas
-
-- Cada rama contiene un caso desarrollado.
-
-### [Hola Mundo](https://github.com/akobashikawa/springboot-personas/tree/holamundo)
+## Hola Mundo
 
 - Saludar a todos
-
-### [Hola](https://github.com/akobashikawa/springboot-personas/tree/hola)
-
-- Saludar a alguien
-
-### [Personas](https://github.com/akobashikawa/springboot-personas/tree/personas)
-
-- Lista de personas
+- Un saludo está hardcodeado en el frontend.
+- Otro saludo viene del backend.
+    - El frontend invoca a GET /holamundo y presenta la respuesta
