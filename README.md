@@ -33,7 +33,7 @@ SpringApplication.run(PersonasApplication.class, args);
 
 - _resources/static_ para contener el frontend
 
-## Personas H2
+## Personas SQL
 
-- Lista de personas guardada en una base de datos H2
+- Lista de personas guardada en una base de datos SQL Server
 
