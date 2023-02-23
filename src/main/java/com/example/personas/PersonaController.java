@@ -79,7 +79,6 @@ public class PersonaController {
     public ResponseEntity<Void> deletePersona(@PathVariable(value = "id") Long personaId) {
         Optional<Persona> personaOp = personaService.findById(personaId);
         if (personaOp.isPresent()) {
-            Persona persona = personaOp.get();
             personaService.deleteById(personaId);
             return ResponseEntity.noContent().build();
         } else {
