@@ -38,5 +38,10 @@ public class PersonaServiceImpl implements PersonaService {
     public Optional<Persona> findById(Long id) {
         return personas.stream().filter(p -> p.getId().equals(id)).findFirst();
     }
+
+    @Override
+    public void deleteById(Long id) {
+        personas.removeIf(p -> p.getId().equals(id));
+    }
     
 }
