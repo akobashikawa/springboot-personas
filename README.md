@@ -7,7 +7,7 @@ Ejemplo de API REST usando Spring Boot.
 - `git clone https://github.com/akobashikawa/springboot-personas.git`
 - `mvn clean install`
 - `cd target`
-- `java -jar hola-0.0.1-SNAPSHOT.jar`
+- `java -jar personas-0.0.1-SNAPSHOT.jar`
 - http://localhost:8080
 
 ## Libraries
