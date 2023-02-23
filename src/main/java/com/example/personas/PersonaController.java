@@ -3,8 +3,10 @@ package com.example.personas;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,6 +42,16 @@ public class PersonaController {
     @GetMapping("/personas")
     public List<Persona> getPersonas() {
         return personaService.findAll();
+    }
+
+    @GetMapping("/personas/{id}")
+    public ResponseEntity<Persona> getPersonaById(@PathVariable(value = "id") Long personaId) {
+        Optional<Persona> persona = personaService.findById(personaId);
+        if (persona.isPresent()) {
+            return ResponseEntity.ok().body(persona.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PostMapping("/personas")

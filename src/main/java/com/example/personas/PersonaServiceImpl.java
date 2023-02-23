@@ -2,6 +2,7 @@ package com.example.personas;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -33,6 +34,9 @@ public class PersonaServiceImpl implements PersonaService {
         return persona;
     }
 
-    
+    @Override
+    public Optional<Persona> findById(Long id) {
+        return personas.stream().filter(p -> p.getId().equals(id)).findFirst();
+    }
     
 }
