@@ -47,4 +47,13 @@ SpringApplication.run(PersonasApplication.class, args);
 
 ### [Personas](https://github.com/akobashikawa/springboot-personas/tree/personas)
 
-- Lista de personas
+- Lista de personas. Base de datos: Array
+
+### [Personas H2](https://github.com/akobashikawa/springboot-personas/tree/personas-h2)
+
+- Lista de personas. Base de datos: H2 en memoria
+
+### [Personas SQL](https://github.com/akobashikawa/springboot-personas/tree/personas-sql)
+
+- Lista de personas. Base de datos SQL Server
+
