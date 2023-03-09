@@ -48,4 +48,4 @@ SpringApplication.run(PersonasApplication.class, args);
         - Se invoca PUT /personas/{id} para guardar los cambios
     - para eliminar
         - Se invoca DELETE /personas/{id} para eliminar el registro
-
+- El service implementation provee la data usando arrays
