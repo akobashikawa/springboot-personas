@@ -11,11 +11,11 @@ public class NotaRepositoryImpl implements NotaRepository {
     private List<Nota> notas = new ArrayList<>();
     private Long idActual = 0L;
 
-    public List<Nota> getNotas() {
+    public List<Nota> findAll() {
         return notas;
     }
 
-    public Nota saveNota(Nota nota) {
+    public Nota save(Nota nota) {
         if (nota.getId() == null) {
             idActual++;
             nota.setId(idActual);
@@ -31,11 +31,11 @@ public class NotaRepositoryImpl implements NotaRepository {
         return nota;
     }
 
-    public Optional<Nota> getNota(Long id) {
+    public Optional<Nota> findById(Long id) {
         return notas.stream().filter(p -> p.getId().equals(id)).findFirst();
     }
 
-    public void deleteNota(Long id) {
+    public void deleteById(Long id) {
         notas.removeIf(p -> p.getId().equals(id));
     }
 

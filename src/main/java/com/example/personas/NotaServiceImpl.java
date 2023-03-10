@@ -14,18 +14,18 @@ public class NotaServiceImpl implements NotaService {
     private NotaRepository notaRepository;
     
     public List<Nota> getNotas() {
-        return notaRepository.getNotas();
+        return notaRepository.findAll();
     }
 
     public Nota saveNota(Nota nota) {
-        return notaRepository.saveNota(nota);
+        return notaRepository.save(nota);
     }
 
     public Optional<Nota> getNota(Long id) {
-        return notaRepository.getNota(id);
+        return notaRepository.findById(id);
     }
 
     public void deleteNota(Long id) {
-        notaRepository.deleteNota(id);
+        notaRepository.deleteById(id);
     }
 }

@@ -5,8 +5,8 @@ import java.util.Optional;
 
 public interface NotaRepository {
     
-    List<Nota> getNotas();
-    Nota saveNota(Nota nota);
-    Optional<Nota> getNota(Long id);
-    void deleteNota(Long id);
+    List<Nota> findAll();
+    Nota save(Nota nota);
+    Optional<Nota> findById(Long id);
+    void deleteById(Long id);
 }
