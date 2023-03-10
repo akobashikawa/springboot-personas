@@ -3,39 +3,29 @@ package com.example.personas;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class NotaServiceImpl implements NotaService {
-    
-    private List<Nota> notas = new ArrayList<>();
-    private Long idActual = 0L;
+
+    @Autowired
+    private NotaRepository notaRepository;
     
     public List<Nota> getNotas() {
-        return notas;
+        return notaRepository.getNotas();
     }
 
     public Nota saveNota(Nota nota) {
-        if (nota.getId() == null) {
-            idActual++;
-            nota.setId(idActual);
-            notas.add(nota);
-        } else {
-            int index = notas.indexOf(nota);
-            if (index >= 0) {
-                notas.set(index, nota);
-            } else {
-                notas.add(nota);
-            }
-        }
-        return nota;
+        return notaRepository.saveNota(nota);
     }
 
     public Optional<Nota> getNota(Long id) {
-        return notas.stream().filter(p -> p.getId().equals(id)).findFirst();
+        return notaRepository.getNota(id);
     }
 
     public void deleteNota(Long id) {
-        notas.removeIf(p -> p.getId().equals(id));
+        notaRepository.deleteNota(id);
     }
 }
