@@ -1,9 +1,26 @@
 package com.example.personas;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="notas")
 public class Nota {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "texto")
     private String texto;
+
+    public Nota() {
+        // Constructor vacío necesario para JPA
+    }
 
     public Long getId() {
         return id;

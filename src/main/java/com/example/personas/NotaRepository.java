@@ -1,12 +1,9 @@
 package com.example.personas;
 
-import java.util.List;
-import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface NotaRepository {
+@Repository
+public interface NotaRepository extends JpaRepository<Nota, Long> {
     
-    List<Nota> findAll();
-    Nota save(Nota nota);
-    Optional<Nota> findById(Long id);
-    void deleteById(Long id);
 }
