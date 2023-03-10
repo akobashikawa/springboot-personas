@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
 
 @Entity
 @Table(name="notas")
@@ -17,6 +19,10 @@ public class Nota {
 
     @Column(name = "texto")
     private String texto;
+
+    @ManyToOne
+    @JoinColumn(name="persona_id")
+    private Persona persona;
 
     public Nota() {
         // Constructor vacío necesario para JPA
