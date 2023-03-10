@@ -61,3 +61,6 @@ SpringApplication.run(PersonasApplication.class, args);
 
 - Lista de personas. Base de datos SQL Server
 
+### [Personas Notas](https://github.com/akobashikawa/springboot-personas/tree/personas-notas)
+
+- Lista de notas. Base de datos: Array en el service
