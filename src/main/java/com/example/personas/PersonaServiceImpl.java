@@ -13,22 +13,22 @@ public class PersonaServiceImpl implements PersonaService {
     private PersonaRepository personaRepository;
     
     @Override
-    public List<Persona> findAll() {
+    public List<Persona> getPersonas() {
         return personaRepository.findAll();
     }
 
     @Override
-    public Persona save(Persona persona) {
+    public Persona savePersona(Persona persona) {
         return personaRepository.save(persona);
     }
 
     @Override
-    public Optional<Persona> findById(Long id) {
+    public Optional<Persona> getPersona(Long id) {
         return personaRepository.findById(id);
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deletePersona(Long id) {
         personaRepository.deleteById(id);
     }
     

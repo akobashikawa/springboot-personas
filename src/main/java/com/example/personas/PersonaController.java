@@ -44,12 +44,12 @@ public class PersonaController {
 
     @GetMapping("/personas")
     public List<Persona> getPersonas() {
-        return personaService.findAll();
+        return personaService.getPersonas();
     }
 
     @GetMapping("/personas/{id}")
     public ResponseEntity<Persona> getPersonaById(@PathVariable(value = "id") Long personaId) {
-        Optional<Persona> personaOp = personaService.findById(personaId);
+        Optional<Persona> personaOp = personaService.getPersona(personaId);
         if (personaOp.isPresent()) {
             Persona persona = personaOp.get();
             return ResponseEntity.ok().body(persona);
@@ -60,16 +60,16 @@ public class PersonaController {
 
     @PostMapping("/personas")
     public Persona createPersona(@RequestBody Persona persona) {
-        return personaService.save(persona);
+        return personaService.savePersona(persona);
     }
 
     @PutMapping("/personas/{id}")
     public ResponseEntity<Persona> updatePersona(@PathVariable(value = "id") Long personaId, @RequestBody Persona personaBody) {
-        Optional<Persona> personaOp = personaService.findById(personaId);
+        Optional<Persona> personaOp = personaService.getPersona(personaId);
         if (personaOp.isPresent()) {
             Persona persona = personaOp.get();
             persona.setNombre(personaBody.getNombre());
-            Persona updatedPersona = personaService.save(persona);
+            Persona updatedPersona = personaService.savePersona(persona);
             return ResponseEntity.ok().body(updatedPersona);
         } else {
             return ResponseEntity.notFound().build();
@@ -78,9 +78,9 @@ public class PersonaController {
 
     @DeleteMapping("/personas/{id}")
     public ResponseEntity<Void> deletePersona(@PathVariable(value = "id") Long personaId) {
-        Optional<Persona> personaOp = personaService.findById(personaId);
+        Optional<Persona> personaOp = personaService.getPersona(personaId);
         if (personaOp.isPresent()) {
-            personaService.deleteById(personaId);
+            personaService.deletePersona(personaId);
             return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.notFound().build();
