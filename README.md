@@ -33,8 +33,6 @@ SpringApplication.run(PersonasApplication.class, args);
 
 - _resources/static_ para contener el frontend
 
-## Personas Repository
+## Personas Notas
 
-- El service implementation usa un repository
-- El repository provee la data
-- El repository usa arrays
+- CRUD de notas
