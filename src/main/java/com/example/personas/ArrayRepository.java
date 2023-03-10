@@ -3,7 +3,7 @@ package com.example.personas;
 import java.util.List;
 import java.util.Optional;
 
-public interface ArrayRepository extends Repository<T, L> {
+public interface ArrayRepository<T, L> {
 
     List<T> findAll();
     T save(T item);
