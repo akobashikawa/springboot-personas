@@ -21,8 +21,8 @@ public class Persona {
     @Column(name = "nombre")
     private String nombre;
 
-    @OneToMany(mappedBy = "persona")
-    private List<Nota> notas;
+    // @OneToMany(mappedBy = "persona")
+    // private List<Nota> notas;
 
     public Persona() {
         // Constructor vacío necesario para JPA

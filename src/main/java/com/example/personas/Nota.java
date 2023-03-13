@@ -6,6 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
 
@@ -22,6 +26,8 @@ public class Nota {
 
     @ManyToOne
     @JoinColumn(name="persona_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    // @JsonIgnore
     private Persona persona;
 
     public Nota() {

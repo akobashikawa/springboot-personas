@@ -1,0 +1,235 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notas Personales</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        [v-cloak]>* {
+            display: none
+        }
+
+        [v-cloak]::before {
+            content: "cargando…"
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" class="container" v-cloak>
+        <h1>Notas Personales</h1>
+
+        <div class="persona">
+            <h3>Persona</h3>
+            <a href="/personas.html" target="_blank">Ver Personas</a>
+
+            <select class="form-select" v-model="persona_id">
+                <option value="" selected>Seleccionar una persona:</option>
+                <option v-for="persona of personas" :value="persona.id">{{ persona.nombre }}</option>
+            </select>
+
+        </div>
+
+        <div class="notas mt-4" v-if="persona_id">
+            <h3>Notas de {{ personaSelected.nombre }}</h3>
+
+            <input type="text" class="form-control" placeholder="Texto" v-model="texto">
+
+            <p>
+                <button class="btn btn-primary mt-2" @click="agregar">Agregar</button>
+            </p>
+
+            <p class="text-bg-danger p-3 my-2" v-if="error">{{ error }}</p>
+            <p class="text-bg-success p-3 my-2" v-if="nuevaNota">Nota agregada: {{ nuevaNota.texto }}</p>
+
+            <p>
+                <button class="btn btn-primary mt-2" @click="listar">Listar</button>
+            </p>
+
+            <p>Notas: {{ notas.length || 0 }}</p>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>texto</th>
+                        <th>acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="nota of notas">
+                        <td>{{ nota.id }}</td>
+                        <td>{{ nota.texto }}</td>
+                        <td>
+                            <button class="btn btn-danger btn-sm" @click="eliminar(nota)">Eliminar</button>
+                            <button class="btn btn-primary btn-sm mx-1" @click="abrirModal(nota)">Editar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Nota</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>id: {{ notaEditada.id }}</p>
+                        <input type="text" class="form-control" placeholder="Nombre" v-model="notaEditada.texto">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" @click="guardar">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    texto: '',
+                    nuevaNota: null,
+                    notaEliminada: null,
+                    notaEditada: {
+                        id: 0,
+                        texto: ''
+                    },
+                    notas: [],
+                    personas: [],
+                    persona_id: '',
+
+                    error: '',
+                    myModal: null,
+                };
+            },
+
+            computed: {
+                personaSelected() {
+                    return this.personas.find(item => item.id == this.persona_id);
+                }
+            },
+
+            methods: {
+                async agregar() {
+                    const url = `/personas/${this.persona_id}/notas`;
+                    const body = { 
+                        texto: this.texto
+                     };
+
+                    try {
+                        this.error = '';
+                        const response = await axios.post(url, body);
+                        this.nuevaNota = response.data;
+                        this.listar();
+                    } catch (error) {
+                        this.error = 'Error: ' + error;
+                        this.nuevaNota = null;
+                    }
+                },
+
+                async traer(id) {
+                    const url = `/notas/${id}`;
+
+                    try {
+                        this.error = '';
+                        const response = await axios.get(url);
+                        this.notaEditada = response.data;
+                        console.log(this.notaEditada);
+                    } catch (error) {
+                        this.error = 'Error: ' + error;
+                    }
+                },
+
+                async guardar() {
+                    const url = `/notas/${this.notaEditada.id}`;
+                    const body = { texto: this.notaEditada.texto };
+
+                    try {
+                        this.error = '';
+                        const response = await axios.put(url, body);
+                        this.listar();
+                    } catch (error) {
+                        this.error = 'Error: ' + error;
+                    }
+                },
+
+                async listar() {
+                    const url = '/notas';
+
+                    try {
+                        this.error = '';
+                        const response = await axios.get(url);
+                        this.notas = response.data;
+                    } catch (error) {
+                        this.error = 'Error: ' + error;
+                    }
+                },
+
+                async listarPersonas() {
+                    const url = '/personas';
+
+                    try {
+                        this.error = '';
+                        const response = await axios.get(url);
+                        this.personas = response.data;
+                    } catch (error) {
+                        this.error = 'Error: ' + error;
+                    }
+                },
+
+                async eliminar(nota) {
+                    console.log(nota);
+                    const url = `/notas/${nota.id}`;
+
+                    try {
+                        this.error = '';
+                        const response = await axios.delete(url);
+                        this.notaEliminada = response.data;
+                        this.listar();
+                    } catch (error) {
+                        this.error = 'Error: ' + error;
+                    }
+                },
+
+                abrirModal(nota) {
+                    this.traer(nota.id);
+                    this.myModal.show();
+                },
+                
+            },
+
+
+            mounted() {
+                this.myModal = new bootstrap.Modal('#myModal', {
+                });
+
+                this.listar();
+                this.listarPersonas();
+            },
+
+        }).mount('#app');  
+    </script>
+
+</body>
+
+</html>

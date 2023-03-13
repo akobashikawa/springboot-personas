@@ -33,6 +33,6 @@ SpringApplication.run(PersonasApplication.class, args);
 
 - _resources/static_ para contener el frontend
 
-## Personas Notas
+## Personas Notas Personales
 
-- CRUD de notas
+- CRUD de notas de personas
