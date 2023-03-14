@@ -20,8 +20,8 @@ public class NotaServiceImpl implements NotaService {
         return notaRepository.findAll();
     }
 
-    public List<Nota> getNotasByPersonaId(Long personaId) {
-        return notaRepository.findAll();
+    public List<Nota> getNotasForPersona(Persona persona) {
+        return notaRepository.findByPersona(persona);
     }
 
     public Nota saveNota(Nota nota) {

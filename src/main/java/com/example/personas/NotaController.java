@@ -30,7 +30,16 @@ public class NotaController {
 
     @GetMapping("/personas/{personaId}/notas")
     public List<Nota> getNotasByPersonaId(@PathVariable(value = "personaId") Long personaId) {
-        return notaService.getNotasByPersonaId(personaId);
+        // existe la persona?
+        Optional<Persona> personaOp = personaService.getPersona(personaId);
+        if (personaOp.isPresent()) {
+            // si existe
+            Persona persona = personaOp.get();
+            return notaService.getNotasForPersona(persona);
+        } else {
+            // si no existe
+            return null;
+        }
     }
 
     @GetMapping("/notas/{id}")

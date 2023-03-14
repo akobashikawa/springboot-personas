@@ -25,7 +25,7 @@
             <h3>Persona</h3>
             <a href="/personas.html" target="_blank">Ver Personas</a>
 
-            <select class="form-select" v-model="persona_id">
+            <select class="form-select" v-model="persona_id" @change="listar">
                 <option value="" selected>Seleccionar una persona:</option>
                 <option v-for="persona of personas" :value="persona.id">{{ persona.nombre }}</option>
             </select>
@@ -140,7 +140,7 @@
                         this.error = '';
                         const response = await axios.post(url, body);
                         this.nuevaNota = response.data;
-                        // this.listar();
+                        this.listar();
                     } catch (error) {
                         this.error = 'Error: ' + error;
                         this.nuevaNota = null;
