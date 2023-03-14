@@ -64,3 +64,7 @@ SpringApplication.run(PersonasApplication.class, args);
 ### [Personas Notas](https://github.com/akobashikawa/springboot-personas/tree/personas-notas)
 
 - Lista de notas. Base de datos: Array en el service
+
+### [Personas Notas Personales H2](https://github.com/akobashikawa/springboot-personas/tree/personas-notas-personales-h2)
+
+- Lista de notas personales. Base de datos: H2 en memoria.
