@@ -140,7 +140,7 @@
                         this.error = '';
                         const response = await axios.post(url, body);
                         this.nuevaNota = response.data;
-                        this.listar();
+                        // this.listar();
                     } catch (error) {
                         this.error = 'Error: ' + error;
                         this.nuevaNota = null;
@@ -174,7 +174,7 @@
                 },
 
                 async listar() {
-                    const url = '/notas';
+                    const url = `/personas/${this.persona_id}/notas`;
 
                     try {
                         this.error = '';
@@ -223,7 +223,6 @@
                 this.myModal = new bootstrap.Modal('#myModal', {
                 });
 
-                this.listar();
                 this.listarPersonas();
             },
 

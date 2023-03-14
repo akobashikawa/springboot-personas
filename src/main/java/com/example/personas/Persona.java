@@ -48,4 +48,17 @@ public class Persona {
         this.nombre = nombre;
     }
 
+    // public void addNota(Nota nota) {
+    //     notas.add(nota);
+    // }
+
+    // public List<Nota> getNotas() {
+    //     return notas;
+    // }
+
+    // public void setNotas(List<Nota> notas) {
+    //     this.notas = notas;
+    // }
+    
+
 }

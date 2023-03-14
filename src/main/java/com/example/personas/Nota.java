@@ -50,4 +50,12 @@ public class Nota {
         this.texto = texto;
     }
 
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
 }

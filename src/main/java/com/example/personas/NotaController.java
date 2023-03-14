@@ -20,9 +20,17 @@ public class NotaController {
     @Autowired
     private NotaService notaService;
     
+    @Autowired
+    private PersonaService personaService;
+    
     @GetMapping("/notas")
     public List<Nota> getNotas() {
         return notaService.getNotas();
+    }
+
+    @GetMapping("/personas/{personaId}/notas")
+    public List<Nota> getNotasByPersonaId(@PathVariable(value = "personaId") Long personaId) {
+        return notaService.getNotasByPersonaId(personaId);
     }
 
     @GetMapping("/notas/{id}")
@@ -33,6 +41,18 @@ public class NotaController {
     @PostMapping("/notas")
     public Nota createNota(@RequestBody Nota nota) {
         return notaService.saveNota(nota);
+    }
+
+    @PostMapping("/personas/{personaId}/notas")
+    public ResponseEntity<Nota> createNotaForPersonaId(@PathVariable(value = "personaId") Long personaId, @RequestBody Nota nota) {
+        Optional<Persona> personaOp = personaService.getPersona(personaId);
+        if (personaOp.isPresent()) {
+            Persona persona = personaOp.get();
+            Nota newNota = notaService.saveNotaForPersona(persona, nota);
+            return ResponseEntity.ok().body(newNota);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PutMapping("/notas/{id}")

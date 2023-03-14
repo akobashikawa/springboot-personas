@@ -12,13 +12,28 @@ public class NotaServiceImpl implements NotaService {
 
     @Autowired
     private NotaRepository notaRepository;
+
+    @Autowired
+    private PersonaRepository personaRepository;
     
     public List<Nota> getNotas() {
         return notaRepository.findAll();
     }
 
+    public List<Nota> getNotasByPersonaId(Long personaId) {
+        return notaRepository.findAll();
+    }
+
     public Nota saveNota(Nota nota) {
         return notaRepository.save(nota);
+    }
+
+    public Nota saveNotaForPersona(Persona persona, Nota nota) {
+        nota.setPersona(persona);
+        Nota savedNota = notaRepository.save(nota);
+        // persona.addNota(savedNota);
+        // Persona savedPersona = personaRepository.save(persona);
+        return savedNota;
     }
 
     public Optional<Nota> getNota(Long id) {
