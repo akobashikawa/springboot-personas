@@ -53,17 +53,17 @@ public class NotaController {
         return ResponseEntity.ok().body(newNota);
     }
 
-    // @PostMapping("/personas/{personaId}/notas")
-    // public ResponseEntity<Nota> createNotaForPersonaId(@PathVariable(value = "personaId") Long personaId, @RequestBody Nota nota) {
-    //     Optional<Persona> personaOp = personaService.getPersona(personaId);
-    //     if (personaOp.isPresent()) {
-    //         Persona persona = personaOp.get();
-    //         Nota newNota = notaService.saveNotaForPersona(persona, nota);
-    //         return ResponseEntity.ok().body(newNota);
-    //     } else {
-    //         return ResponseEntity.notFound().build();
-    //     }
-    // }
+    @PostMapping("/personas/{personaId}/notas")
+    public ResponseEntity<Nota> createNotaForPersonaId(@PathVariable(value = "personaId") Long personaId, @RequestBody Nota nota) {
+        Optional<Persona> personaOp = personaService.getPersona(personaId);
+        if (personaOp.isPresent()) {
+            Persona persona = personaOp.get();
+            Nota newNota = notaService.saveNotaForPersona(persona, nota);
+            return ResponseEntity.ok().body(newNota);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
     @PutMapping("/notas/{id}")
     public ResponseEntity<Nota> updateNota(@PathVariable(value = "id") Long notaId, @RequestBody Nota notaBody) {
