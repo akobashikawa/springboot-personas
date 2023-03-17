@@ -22,6 +22,13 @@ public class PersonaServiceImpl implements PersonaService {
         return personaRepository.save(persona);
     }
 
+    public Persona savePersonaForUsuario(Usuario usuario, Persona persona) {
+        persona.setUsuario(usuario);
+        Persona savedPersona = personaRepository.save(persona);
+        return savedPersona;
+    }
+    
+
     @Override
     public Optional<Persona> getPersona(Long id) {
         return personaRepository.findById(id);

@@ -25,6 +25,9 @@ public class PersonaController {
     @Autowired
     private PersonaService personaService;
 
+    @Autowired
+    private UsuarioService usuarioService;
+
     @GetMapping("/hola")
     public HashMap<String, String> holamundo() {
         HashMap<String, String> map = new HashMap<>();
@@ -61,6 +64,18 @@ public class PersonaController {
     @PostMapping("/personas")
     public Persona createPersona(@RequestBody Persona persona) {
         return personaService.savePersona(persona);
+    }
+
+    @PostMapping("/usuarios/{usuarioId}/personas")
+    public ResponseEntity<Persona> createPersonaForUsuarioId(@PathVariable(value = "usuarioId") Long usuarioId, @RequestBody Persona persona) {
+        Optional<Usuario> usuarioOp = usuarioService.getUsuario(usuarioId);
+        if (usuarioOp.isPresent()) {
+            Usuario usuario = usuarioOp.get();
+            Persona newPersona = personaService.savePersonaForUsuario(usuario, persona);
+            return ResponseEntity.ok().body(newPersona);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PutMapping("/personas/{id}")

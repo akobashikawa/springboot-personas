@@ -21,6 +21,13 @@
     <div id="app" class="container" v-cloak>
         <h1>Personas</h1>
 
+        <a href="/usuarios.html" target="_blank">Ver Usuarios</a>
+
+            <select class="form-select" v-model="usuario_id" @change="listar">
+                <option value="" selected>Seleccionar un usuario:</option>
+                <option v-for="usuario of usuarios" :value="usuario.id">{{ usuario.email }}</option>
+            </select>
+
         <input type="text" class="form-control" placeholder="Nombre" v-model="nombre">
 
         <p>
@@ -40,13 +47,15 @@
                 <tr>
                     <th>id</th>
                     <th>nombre</th>
-                    <th>nombre</th>
+                    <th>usuario</th>
+                    <th>acción</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="persona of personas">
                     <td>{{ persona.id }}</td>
                     <td>{{ persona.nombre }}</td>
+                    <td>{{ persona.usuario.email }}</td>
                     <td>
                         <button class="btn btn-danger btn-sm" @click="eliminar(persona)">Eliminar</button>
                         <button class="btn btn-primary btn-sm mx-1" @click="abrirModal(persona)">Editar</button>
@@ -65,6 +74,7 @@
                     </div>
                     <div class="modal-body">
                         <p>id: {{ personaEditada.id }}</p>
+                        <p>email: {{ personaEditada.usuario.email }}</p>
                         <input type="text" class="form-control" placeholder="Nombre" v-model="personaEditada.nombre">
                     </div>
                     <div class="modal-footer">
@@ -96,9 +106,16 @@
                     personaEliminada: null,
                     personaEditada: {
                         id: 0,
-                        nombre: ''
+                        nombre: '',
+                        usuario: {
+                            id: 0,
+                            email: ''
+                        }
                     },
                     personas: [],
+                    usuarios: [],
+                    usuario_id: '',
+
                     error: '',
                     myModal: null,
                 };
@@ -106,8 +123,10 @@
 
             methods: {
                 async agregar() {
-                    const url = '/personas';
-                    const body = { nombre: this.nombre };
+                    const url = `/usuarios/${this.usuario_id}/personas`;
+                    const body = {
+                        nombre: this.nombre
+                    };
 
                     try {
                         this.error = '';
@@ -147,13 +166,24 @@
                 },
 
                 async listar() {
-                    // const url = '/personas';
-                    const url = 'http://localhost:8080/personas';
+                    const url = '/personas';
 
                     try {
                         this.error = '';
                         const response = await axios.get(url);
                         this.personas = response.data;
+                    } catch (error) {
+                        this.error = 'Error: ' + error;
+                    }
+                },
+
+                async listarUsuarios() {
+                    const url = '/usuarios';
+
+                    try {
+                        this.error = '';
+                        const response = await axios.get(url);
+                        this.usuarios = response.data;
                     } catch (error) {
                         this.error = 'Error: ' + error;
                     }
@@ -185,6 +215,7 @@
                 });
 
                 this.listar();
+                this.listarUsuarios();
             },
         }).mount('#app');  
     </script>
