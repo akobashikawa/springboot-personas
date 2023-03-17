@@ -48,6 +48,7 @@ public class UsuarioController {
         if (usuarioOp.isPresent()) {
             Usuario usuario = usuarioOp.get();
             usuario.setEmail(usuarioBody.getEmail());
+            usuario.setPassword(usuarioBody.getPassword());
             Usuario updatedUsuario = usuarioService.saveUsuario(usuario);
             return ResponseEntity.ok().body(updatedUsuario);
         } else {

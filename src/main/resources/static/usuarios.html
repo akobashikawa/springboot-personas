@@ -22,6 +22,7 @@
         <h1>Usuarios</h1>
 
         <input type="text" class="form-control" placeholder="Email" v-model="email">
+        <input type="text" class="form-control" placeholder="Password" v-model="password">
 
         <p>
             <button class="btn btn-primary mt-2" @click="agregar">Agregar</button>
@@ -40,6 +41,7 @@
                 <tr>
                     <th>id</th>
                     <th>email</th>
+                    <th>password</th>
                     <th>acciones</th>
                 </tr>
             </thead>
@@ -47,6 +49,7 @@
                 <tr v-for="usuario of usuarios">
                     <td>{{ usuario.id }}</td>
                     <td>{{ usuario.email }}</td>
+                    <td>{{ usuario.password }}</td>
                     <td>
                         <button class="btn btn-danger btn-sm" @click="eliminar(usuario)">Eliminar</button>
                         <button class="btn btn-primary btn-sm mx-1" @click="abrirModal(usuario)">Editar</button>
@@ -65,7 +68,8 @@
                     </div>
                     <div class="modal-body">
                         <p>id: {{ usuarioEditado.id }}</p>
-                        <input type="text" class="form-control" placeholder="Nombre" v-model="usuarioEditado.email">
+                        <input type="text" class="form-control" placeholder="Email" v-model="usuarioEditado.email">
+                        <input type="text" class="form-control" placeholder="Password" v-model="usuarioEditado.password">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -96,7 +100,8 @@
                     usuarioEliminado: null,
                     usuarioEditado: {
                         id: 0,
-                        email: ''
+                        email: '',
+                        password: ''
                     },
                     usuarios: [],
                     error: '',
@@ -107,7 +112,10 @@
             methods: {
                 async agregar() {
                     const url = '/usuarios';
-                    const body = { email: this.email };
+                    const body = {
+                        email: this.email,
+                        password: this.password,
+                    };
 
                     try {
                         this.error = '';
@@ -135,7 +143,10 @@
 
                 async guardar() {
                     const url = `/usuarios/${this.usuarioEditado.id}`;
-                    const body = { email: this.usuarioEditado.email };
+                    const body = {
+                        email: this.usuarioEditado.email,
+                        password: this.usuarioEditado.password,
+                    };
 
                     try {
                         this.error = '';
