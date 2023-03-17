@@ -131,9 +131,10 @@
 
             methods: {
                 async agregar() {
-                    const url = `/personas/${this.persona_id}/notas`;
+                    const url = `/notas`;
                     const body = { 
-                        texto: this.texto
+                        texto: this.texto,
+                        persona: this.personaSelected,
                      };
 
                     try {
