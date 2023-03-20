@@ -11,6 +11,9 @@ public class PersonaServiceImpl implements PersonaService {
 
     @Autowired
     private PersonaRepository personaRepository;
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
     
     @Override
     public List<Persona> getPersonas() {
@@ -23,7 +26,8 @@ public class PersonaServiceImpl implements PersonaService {
     }
 
     public Persona savePersonaForUsuario(Usuario usuario, Persona persona) {
-        persona.setUsuario(usuario);
+        usuario.setPersona(persona);
+        // Usuario usuarioSaved = usuarioRepository.save(usuario);
         Persona savedPersona = personaRepository.save(persona);
         return savedPersona;
     }

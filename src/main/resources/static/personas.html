@@ -42,12 +42,12 @@
         </p>
 
         <p>Personas: {{ personas.length || 0 }}</p>
-        <table class="table table-striped table-hover">
+        <table class="table table-striped table-hover" v-if="personas.length">
             <thead>
                 <tr>
                     <th>id</th>
                     <th>nombre</th>
-                    <th>usuario</th>
+                    <!-- <th>usuario</th> -->
                     <th>acción</th>
                 </tr>
             </thead>
@@ -55,7 +55,7 @@
                 <tr v-for="persona of personas">
                     <td>{{ persona.id }}</td>
                     <td>{{ persona.nombre }}</td>
-                    <td>{{ persona.usuario.email }}</td>
+                    <!-- <td>{{ persona.usuario.email }}</td> -->
                     <td>
                         <button class="btn btn-danger btn-sm" @click="eliminar(persona)">Eliminar</button>
                         <button class="btn btn-primary btn-sm mx-1" @click="abrirModal(persona)">Editar</button>
@@ -74,7 +74,7 @@
                     </div>
                     <div class="modal-body">
                         <p>id: {{ personaEditada.id }}</p>
-                        <p>email: {{ personaEditada.usuario.email }}</p>
+                        <!-- <p>email: {{ personaEditada.usuario.email }}</p> -->
                         <input type="text" class="form-control" placeholder="Nombre" v-model="personaEditada.nombre">
                     </div>
                     <div class="modal-footer">

@@ -11,6 +11,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private PersonaRepository personaRepository;
     
     @Override
     public List<Usuario> getUsuarios() {
@@ -30,6 +33,14 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public void deleteUsuario(Long id) {
         usuarioRepository.deleteById(id);
+    }
+
+    public Usuario registrarUsuario(String email, String password, String nombre) {
+        Usuario usuario = new Usuario(email, password);
+        Persona persona = new Persona(nombre);
+        usuario.setPersona(persona);
+        Usuario usuarioSaved = usuarioRepository.save(usuario);
+        return usuarioSaved;
     }
     
 }

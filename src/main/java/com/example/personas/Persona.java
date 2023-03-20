@@ -2,8 +2,10 @@ package com.example.personas;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,17 +21,15 @@ public class Persona {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "nombre")
+    @Column(name = "nombre", nullable = false)
     private String nombre;
 
-    // @OneToMany(mappedBy = "persona")
-    // private List<Nota> notas;
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    // @OneToOne(cascade = CascadeType.ALL)
+    // @JoinColumn(name = "usuario_id")
+    // private Usuario usuario;
 
     public Persona() {
         // Constructor vacío necesario para JPA
@@ -55,13 +55,13 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
-    }
+    // public Usuario getUsuario() {
+    //     return usuario;
+    // }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
+    // public void setUsuario(Usuario usuario) {
+    //     this.usuario = usuario;
+    // }
 
     // public void addNota(Nota nota) {
     //     notas.add(nota);

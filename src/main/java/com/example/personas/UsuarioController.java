@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
 @CrossOrigin(origins = "*")
 @RestController
 public class UsuarioController {
@@ -40,6 +42,15 @@ public class UsuarioController {
     @PostMapping("/usuarios")
     public Usuario createUsuario(@RequestBody Usuario usuario) {
         return usuarioService.saveUsuario(usuario);
+    }
+
+    @PostMapping("/registro-usuario")
+    public ResponseEntity<Usuario> registrarUsuario(@RequestBody JsonNode requestBody) {
+        String email = requestBody.get("email").asText();
+        String password = requestBody.get("password").asText();
+        String nombre = requestBody.get("nombre").asText();
+        Usuario newUsuario = usuarioService.registrarUsuario(email, password, nombre);
+        return ResponseEntity.ok().body(newUsuario);
     }
 
     @PutMapping("/usuarios/{id}")
