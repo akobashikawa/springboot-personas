@@ -53,6 +53,19 @@ public class UsuarioController {
         return ResponseEntity.ok().body(newUsuario);
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<Usuario> login(@RequestBody JsonNode requestBody) {
+        String email = requestBody.get("email").asText();
+        String password = requestBody.get("password").asText();
+        Optional<Usuario> usuarioOp = usuarioService.login(email, password);
+        if (usuarioOp.isPresent()) {
+            Usuario usuario = usuarioOp.get();
+            return ResponseEntity.ok().body(usuario);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @PutMapping("/usuarios/{id}")
     public ResponseEntity<Usuario> updateUsuario(@PathVariable(value = "id") Long usuarioId, @RequestBody Usuario usuarioBody) {
         Optional<Usuario> usuarioOp = usuarioService.getUsuario(usuarioId);

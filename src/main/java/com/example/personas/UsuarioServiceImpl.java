@@ -42,5 +42,9 @@ public class UsuarioServiceImpl implements UsuarioService {
         Usuario usuarioSaved = usuarioRepository.save(usuario);
         return usuarioSaved;
     }
+
+    public Optional<Usuario> login(String email, String password) {
+        return usuarioRepository.findByEmailAndPassword(email, password);
+    }
     
 }

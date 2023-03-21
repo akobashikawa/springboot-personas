@@ -71,7 +71,7 @@ public class NotaController {
         if (notaOp.isPresent()) {
             Nota nota = notaOp.get();
             nota.setTexto(notaBody.getTexto());
-            nota.setPersona(notaBody.getPersona());
+            // nota.setPersona(notaBody.getPersona());
             Nota updatedNota = notaService.saveNota(nota);
             return ResponseEntity.ok().body(updatedNota);
         } else {
