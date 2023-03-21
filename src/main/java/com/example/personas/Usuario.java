@@ -12,9 +12,8 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-// import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-// @JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Entity
 @Table(name="usuarios")
 public class Usuario {
@@ -28,6 +27,7 @@ public class Usuario {
     private String email;
 
     @Column(name = "password")
+    @JsonIgnore
     private String password;
 
     @OneToOne(cascade = CascadeType.ALL)
