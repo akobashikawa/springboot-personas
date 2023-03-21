@@ -12,6 +12,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -27,9 +30,10 @@ public class Persona {
     @Column(name = "nombre", nullable = false)
     private String nombre;
 
-    // @OneToOne(cascade = CascadeType.ALL)
-    // @JoinColumn(name = "usuario_id")
-    // private Usuario usuario;
+    @OneToOne(mappedBy = "persona")
+    @JoinColumn(name = "usuario_id")
+    @JsonIgnore
+    private Usuario usuario;
 
     public Persona() {
         // Constructor vacío necesario para JPA
@@ -55,13 +59,13 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    // public Usuario getUsuario() {
-    //     return usuario;
-    // }
+    public Usuario getUsuario() {
+        return usuario;
+    }
 
-    // public void setUsuario(Usuario usuario) {
-    //     this.usuario = usuario;
-    // }
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 
     // public void addNota(Nota nota) {
     //     notas.add(nota);
