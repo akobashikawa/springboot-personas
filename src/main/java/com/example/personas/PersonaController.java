@@ -28,7 +28,7 @@ public class PersonaController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @GetMapping("/hola")
+    @GetMapping("/holamundo")
     public HashMap<String, String> holamundo() {
         HashMap<String, String> map = new HashMap<>();
         String saludo = holaService.getSaludo("");
