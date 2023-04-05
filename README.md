@@ -68,3 +68,7 @@ SpringApplication.run(PersonasApplication.class, args);
 ### [Personas Notas Personales H2](https://github.com/akobashikawa/springboot-personas/tree/personas-notas-personales-h2)
 
 - Lista de notas personales. Base de datos: H2 en memoria.
+
+### [Sistema de Notas Personales H2](https://github.com/akobashikawa/springboot-personas/tree/sistema-notas-personales-h2)
+
+- Sistema de notas personales. Base de datos: H2 en memoria.
