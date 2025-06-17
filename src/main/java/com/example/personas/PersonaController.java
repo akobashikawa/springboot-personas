@@ -1,8 +1,6 @@
 package com.example.personas;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,37 +24,12 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 @CrossOrigin(origins = "*")
 @RestController
-@Tag(name = "API Personas", description = "API para gestión de saludos y personas")
+@Tag(name = "Personas", description = "API para gestión de personas")
 public class PersonaController {
-
-    @Autowired
-    private HolaService holaService;
 
     @Autowired
     private PersonaService personaService;
 
-    // ENDPOINTS DE SALUDO
-    @Operation(summary = "Saludo genérico", description = "Devuelve 'Hola Mundo!'")
-    @ApiResponse(responseCode = "200", description = "Saludo exitoso")
-    @GetMapping("/holamundo")
-    public ResponseEntity<Map<String, String>> holamundo() {
-        Map<String, String> response = new HashMap<>();
-        String saludo = holaService.getSaludo("");
-        response.put("saludo", saludo);
-        return ResponseEntity.ok(response);
-    }
-
-    @Operation(summary = "Saludo personalizado", description = "Devuelve saludo personalizado con el nombre proporcionado")
-    @ApiResponse(responseCode = "200", description = "Saludo personalizado exitoso")
-    @PostMapping("/hola")
-    public ResponseEntity<Map<String, String>> hola(@RequestBody Persona persona) {
-        Map<String, String> response = new HashMap<>();
-        String saludo = holaService.getSaludo(persona.getNombre());
-        response.put("saludo", saludo);
-        return ResponseEntity.ok(response);
-    }
-
-    // ENDPOINTS DE PERSONAS
     @Operation(
         summary = "Obtener todas las personas",
         description = "Obtiene una lista de todas las personas registradas en el sistema"
