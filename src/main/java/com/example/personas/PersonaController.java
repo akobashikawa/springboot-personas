@@ -3,10 +3,9 @@ package com.example.personas;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin(origins = "*")
@@ -14,17 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonaController {
     
     @GetMapping("/holamundo")
-    public Map<String, String> holamundo() {
-        HashMap<String, String> map = new HashMap<>();
-        map.put("saludo", "Hola Mundo!");
-        return map;
+    public ResponseEntity<Map<String, String>> holamundo() {
+        Map<String, String> response = new HashMap<>();
+        response.put("saludo", "Hola Mundo!");
+        return ResponseEntity.ok(response);
     }
 
-    @PostMapping("/hola")
-    public Map<String, String> hola(@RequestBody Persona persona) {
-        HashMap<String, String> map = new HashMap<>();
-        String nombre = persona.getNombre();
-        map.put("saludo", "Hola " + nombre + "!");
-        return map;
-    }
 }
