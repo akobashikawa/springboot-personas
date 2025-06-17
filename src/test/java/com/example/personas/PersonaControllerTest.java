@@ -23,7 +23,7 @@ class PersonaControllerTest {
 
     @Test
     void testHolaMundo() throws Exception {
-        // Mock del servicio
+        // Mock del servicio - ahora retorna "Hola Mundo!" cuando recibe ""
         when(holaService.getSaludo("")).thenReturn("Hola Mundo!");
         
         mockMvc.perform(get("/holamundo"))
