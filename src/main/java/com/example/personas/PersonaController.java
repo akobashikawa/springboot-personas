@@ -68,7 +68,7 @@ public class PersonaController {
     )
     @GetMapping("/personas")
     public ResponseEntity<List<Persona>> getPersonas() {
-        List<Persona> personas = personaService.getAllPersonas();
+        List<Persona> personas = personaService.findAll();
         return ResponseEntity.ok(personas);
     }
 
@@ -92,7 +92,7 @@ public class PersonaController {
     public ResponseEntity<Persona> getPersonaById(
         @Parameter(description = "ID único de la persona", required = true, example = "1")
         @PathVariable(value = "id") Long personaId) {
-        Optional<Persona> persona = personaService.getPersonaById(personaId);
+        Optional<Persona> persona = personaService.findById(personaId);
         if (persona.isPresent()) {
             return ResponseEntity.ok(persona.get());
         } else {
@@ -120,7 +120,7 @@ public class PersonaController {
     public ResponseEntity<Persona> createPersona(
         @Parameter(description = "Datos de la persona a crear", required = true)
         @RequestBody Persona persona) {
-        Persona savedPersona = personaService.savePersona(persona);
+        Persona savedPersona = personaService.save(persona);
         return ResponseEntity.ok(savedPersona);
     }
 
@@ -151,11 +151,11 @@ public class PersonaController {
         @PathVariable(value = "id") Long personaId,
         @Parameter(description = "Nuevos datos de la persona", required = true)
         @RequestBody Persona personaBody) {
-        Optional<Persona> persona = personaService.getPersonaById(personaId);
+        Optional<Persona> persona = personaService.findById(personaId);
         if (persona.isPresent()) {
             Persona existingPersona = persona.get();
             existingPersona.setNombre(personaBody.getNombre());
-            Persona updatedPersona = personaService.savePersona(existingPersona);
+            Persona updatedPersona = personaService.save(existingPersona);
             return ResponseEntity.ok(updatedPersona);
         } else {
             return ResponseEntity.notFound().build();
@@ -181,9 +181,9 @@ public class PersonaController {
     public ResponseEntity<Void> deletePersona(
         @Parameter(description = "ID único de la persona a eliminar", required = true, example = "1")
         @PathVariable(value = "id") Long personaId) {
-        Optional<Persona> persona = personaService.getPersonaById(personaId);
+        Optional<Persona> persona = personaService.findById(personaId);
         if (persona.isPresent()) {
-            personaService.deletePersona(personaId);
+            personaService.deleteById(personaId);
             return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.notFound().build();
