@@ -4,20 +4,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class HolaService {
-
-    private String saludo = "";
-
+    
     public String getSaludo(String nombre) {
-        if (nombre == "") {
-            this.saludo = "Hola Mundo!";
-        } else {
-            this.saludo = "Hola " + nombre + "!";
+        // Si nombre es null o está en blanco, usar "Mundo"
+        if (nombre == null || nombre.trim().isEmpty()) {
+            nombre = "Mundo";
         }
-        return this.saludo;
+        
+        return "Hola " + nombre + "!";
     }
-
-    public void setSaludo(String saludo) {
-        this.saludo = saludo;
-    }
-
 }
